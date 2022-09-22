@@ -1,20 +1,20 @@
-import {FC, ReactElement, ReactNode} from 'react';
+import { FC, ReactElement, ReactNode } from 'react';
 
-import {Header} from "~/App/Layout/LayoutMain/Header/Header";
-import {Footer} from "~/App/Layout/LayoutMain/Footer/Footer";
+import { Header } from '~/App/Layout/LayoutMain/Header/Header';
+import { Footer } from '~/App/Layout/LayoutMain/Footer/Footer';
 
-interface Props{
-  children : ReactNode
+interface Props {
+  children: ReactNode;
 }
 
-const LayoutMain:FC<Props> = (props : Props): ReactElement => {
+const LayoutMain: FC<Props> = (props: Props): ReactElement => {
   return (
     <>
-      <Header/>
-        <main>{props.children}</main>
-      <Footer/>
+      <Header />
+      <main>{props.children}</main>
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export { LayoutMain }
+export { LayoutMain };

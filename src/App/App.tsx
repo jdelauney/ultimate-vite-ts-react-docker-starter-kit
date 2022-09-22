@@ -1,13 +1,12 @@
-import {FC, ReactElement} from "react";
+import { FC, ReactElement } from 'react';
 
-import { Router } from "~/App/router/Router";
+import { Router } from '~/App/router/Router';
 
-
-const App:FC = ():ReactElement => {
+const App: FC = (): ReactElement => {
   return (
     <>
-      <Router/>
+      <Router />
     </>
-  )
-}
-export default App
+  );
+};
+export default App;

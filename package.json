@@ -19,8 +19,7 @@
     "test:coverage": "vitest --coverage",
     "lint": "eslint src --fix",
     "lint:scss": "npx stylelint **/*.scss --max-warnings 0 --fix",
-    "prettier": "prettier --write",
-    "format": "prettier --write && eslint src --fix",
+    "format": "prettier --write",
     "prepare": "husky install"
   },
   "pre-commit": "lint-staged",

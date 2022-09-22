@@ -1,11 +1,7 @@
-import {FC, ReactElement} from 'react'
+import { FC, ReactElement } from 'react';
 
 const Footer: FC = (): ReactElement => {
-  return (
-    <footer>
-      FOOTER
-    </footer>
-  )
-}
+  return <footer>FOOTER</footer>;
+};
 
-export { Footer }
+export { Footer };
