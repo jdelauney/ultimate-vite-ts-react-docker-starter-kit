@@ -1,0 +1,71 @@
+FROM node:current-bullseye AS builder
+ENV NODE_ENV production
+#ENV NPM_CONFIG_PRODUCTION=true
+ENV DISABLE_ESLINT_PLUGIN=true
+
+# Add a work directory
+WORKDIR /app
+# Cache and Install dependencies
+COPY ./package.json .
+
+# Install latest npm/pnpm
+RUN npm i -g pnpm
+
+# RUN npm i -g npm@latest
+
+################ NOT WORKING ###############################
+# Create .pnpmrc file for avoid ESLint installation peer dependencies
+# "strict-peer-dependencies=false"
+# RUN echo "auto-install-peers=true" > .pnpmrc
+# RUN pnpm config set auto-install-peers true
+###########################################################
+
+# Install package
+
+# NOTE : with NPM we need to copy package.lock.json
+# RUN npm ci --only=production --ignore-scripts
+
+# NPM
+# RUN npm install --ignore-scripts --omit=dev --no-audit
+
+# PNPM NOT WORKING
+RUN pnpm install --ignore-scripts
+
+# Copy app files
+#COPY index.html .
+#COPY package.json .
+#COPY package.lock.json .
+#COPY postcss-config.js .
+#COPY tsconfig.prod.json .
+#COPY vite.config.ts .
+# Deep copy don't work
+#COPY ./src/**/* ./src
+
+COPY . .
+
+# Build the app
+# RUN npm run build
+RUN pnpm build
+
+# Bundle static assets with nginx
+FROM nginx:latest as production
+ENV NODE_ENV production
+# Copy built assets from builder
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+# Add your nginx.conf
+COPY ./docker/prod/http_server/nginx/nginx.conf /etc/nginx/conf.d/default.conf
+
+# Copy SSL Key and cert and SSL config
+#COPY ./docker/prod/http_server/nginx/https_nginx.conf /etc/nginx/conf.d/default.conf
+#COPY ./docker/prod/http_server/nginx/ssl/self-signed-ssl-cert.crt /etc/nginx/ssl/self-signed-ssl-cert.crt
+#COPY ./docker/prod/http_server/nginx/ssl/self-signed-ssl-key.key /etc/nginx/ssl/self-signed-ssl-key.key
+
+# Expose port
+EXPOSE 80
+
+# Expose SSL
+#EXPOSE 443
+
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]

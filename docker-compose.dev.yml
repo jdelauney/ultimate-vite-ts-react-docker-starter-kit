@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  app:
+    container_name: app-dev
+    image: app-dev
+    build:
+      context: .
+      dockerfile: ./docker/dev/dockerfile.app.dev
+      target: development
+    ports:
+      - "3000:3000"
+    volumes:
+      - type: bind
+        source: ./index.html
+        target: /app/index.html
+      - type: bind
+        source: ./src
+        target: /app/src
