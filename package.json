@@ -18,7 +18,7 @@
     "test:watch": "vitest --watch",
     "test:coverage": "vitest --coverage",
     "lint": "eslint src --fix",
-    "lint:scss": "stylelint **/*.scss --max-warnings 0 --fix",
+    "lint:scss": "npx stylelint **/*.scss --max-warnings 0 --fix",
     "prettier": "prettier --write",
     "format": "prettier --write && eslint src --fix",
     "prepare": "husky install"

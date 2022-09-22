@@ -1,5 +1,5 @@
 {
    "src/**/*.+(js|ts|json|html|scss|css|md)":["prettier --cache --write"],
    "src/**/*.+(js|ts|json)":["eslint --fix"],
-   "src/**/*.scss":["stylelint --fix"],
+   "src/**/*.scss":["npx stylelint --fix"],
 }
