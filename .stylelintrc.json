@@ -5,6 +5,8 @@
     "stylelint-order"
   ],
   "rules": {
+    "selector-no-qualifying-type": null,
+    "selector-max-id": 5,
     "max-nesting-depth": 5,
     "order/properties-alphabetical-order": null,
     "order/order": [

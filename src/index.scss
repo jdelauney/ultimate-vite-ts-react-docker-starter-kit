@@ -1,0 +1,85 @@
+@use 'sass-swing';
+
+body > #root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 100vh;
+}
+
+body > #root > main {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  margin-top: 4.8em;
+  padding: 0 1em 1em;
+}
+
+svg#freepik_stories-404-error:not(.animated) .animable {
+  opacity: 0;
+}
+
+svg#freepik_stories-404-error.animated #freepik--404--inject-12 {
+  animation: 7s Infinite linear wind;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-404-error.animated #freepik--Planets--inject-12 {
+  animation: 8s Infinite ease-in-out floating;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-404-error.animated #freepik--Planets--inject-11 {
+  animation: 10s Infinite ease floating reverse;
+  animation-delay: 2s;
+}
+
+@keyframes wind {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(3deg);
+  }
+
+  75% {
+    transform: rotate(-3deg);
+  }
+}
+
+@keyframes floating {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-notfound {
+  height: 100vh;
+  background-image: radial-gradient(
+    ellipse farthest-corner at 50% 30%,
+    rgba(13, 14, 18, 1) 0%,
+    rgba(20, 24, 28, 1) 40%,
+    rgba(40, 44, 48, 1) 60%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  color: #fff;
+  font-size: 1.5em;
+
+  h1 {
+    color: #fff !important;
+  }
+}
