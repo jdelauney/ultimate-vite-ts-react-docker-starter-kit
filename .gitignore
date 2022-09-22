@@ -199,4 +199,3 @@ dist
 *.scss.map
 /.idea/Ultimate-React-TS-Vite-starter-kit.iml
 /.idea/.gitignore
-/pnpm-lock.yaml
