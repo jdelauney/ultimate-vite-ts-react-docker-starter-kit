@@ -2,9 +2,12 @@ version: "3.8"
 
 services:
   app:
-    container_name: app-prod    
+    container_name: app-prod
     image: app-prod
     build:
       context: .
       dockerfile: ./docker/prod/dockerfile.app.prod
       target: production
+    ports:
+      - "80:80"
+      - "443:443"
