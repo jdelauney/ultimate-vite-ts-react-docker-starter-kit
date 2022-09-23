@@ -1,6 +1,7 @@
 import { FC, ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '~/App/router/routes';
+import ThemeSwitcher from '~/App/components/ThemeSwitcher/ThemeSwitcher';
 
 const Navbar: FC = (): ReactElement => {
   return (
@@ -13,12 +14,19 @@ const Navbar: FC = (): ReactElement => {
             <b>BRAND</b>
           </span>
         </Link>
-        <div id='main-menu' className='navbar__menu flex--center'>
+        <div id='main-menu' className='navbar__menu navbar__menu-right flex--column flex--center d:flex--row flex--right'>
           <ul>
             <li>
               <Link to={ROUTES.HOME} aria-label='back to home'>
                 Accueil
               </Link>
+            </li>
+          </ul>
+        </div>
+        <div className='navbar__menu-right navbar__item-push-right'>
+          <ul>
+            <li>
+              <ThemeSwitcher />
             </li>
           </ul>
         </div>
