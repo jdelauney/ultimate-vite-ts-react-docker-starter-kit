@@ -78,7 +78,7 @@
     "stylelint": "^14.12.1",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-sass-guidelines": "^9.0.1",
-    "stylelint-order": "^5.0.0"
+    "stylelint-order": "^6.0.2"
   },
   "dependencies": {
     "@hookform/resolvers": "^2.9.8",
