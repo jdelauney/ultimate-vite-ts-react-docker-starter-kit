@@ -92,7 +92,7 @@
     "cssnano-preset-default": "^5.2.12",
     "postcss": "^8.4.16",
     "postcss-flexbugs-fixes": "^5.0.2",
-    "postcss-sort-media-queries": "^4.3.0",
+    "postcss-sort-media-queries": "^5.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.35.0",
