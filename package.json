@@ -90,7 +90,7 @@
     "autoprefixer": "^10.4.15",
     "cssnano": "^6.0.1",
     "cssnano-preset-default": "^6.0.1",
-    "postcss": "^8.4.16",
+    "postcss": "^8.4.31",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-sort-media-queries": "^5.2.0",
     "react": "^18.2.0",
